@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -20,11 +21,11 @@ public class AbstractDAO<T> implements GenericDAO<T>{
 	
 	public Connection getConnection() {
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			String url = "jdbc:mysql://localhost:3306/dbs_servlet";
-			String user = "root";
-			String password = "Anhme0deptrai123";
-			return DriverManager.getConnection(url,user,password);
+			Class.forName(resourceBundle.getString("driverName"));
+			String url = resourceBundle.getString("url");
+			String user = resourceBundle.getString("user");
+			String password = resourceBundle.getString("password");
+			return DriverManager.getConnection(url, user, password);
 		} catch (ClassNotFoundException | SQLException e) {
 			return null;
 		}
@@ -76,6 +77,8 @@ public class AbstractDAO<T> implements GenericDAO<T>{
 					statement.setInt(index, (Integer) parameter);
 				} else if (parameter instanceof Timestamp) {
 					statement.setTimestamp(index, (Timestamp) parameter);
+				} else if (parameter == null) {
+					statement.setNull(index, Types.NULL);
 				}
 			}
 		} catch (SQLException e) {

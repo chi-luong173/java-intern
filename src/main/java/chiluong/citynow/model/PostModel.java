@@ -5,7 +5,7 @@ import java.security.Timestamp;
 import java.util.Date;
 
 public class PostModel extends AbstractModel<PostModel> {
-	private String tiltle;
+	private String title;
 	private String review;
 	private String thumbnail;
 	private int rate;
@@ -18,11 +18,11 @@ public class PostModel extends AbstractModel<PostModel> {
 	public void setUserId(Long userId) {
 		this.userId = userId;
 	}
-	public String getTiltle() {
-		return tiltle;
+	public String getTitle() {
+		return title;
 	}
-	public void setTiltle(String tiltle) {
-		this.tiltle = tiltle;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 	public String getReview() {
 		return review;
