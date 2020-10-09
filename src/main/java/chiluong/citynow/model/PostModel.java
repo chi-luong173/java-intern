@@ -4,13 +4,20 @@ import java.security.GuardedObject;
 import java.security.Timestamp;
 import java.util.Date;
 
-public class PostModel extends AbstractModel {
+public class PostModel extends AbstractModel<PostModel> {
 	private String tiltle;
 	private String review;
 	private String thumbnail;
 	private int rate;
 	private int upvoted;
 	private int downvoted;
+	private Long userId;
+	public Long getUserId() {
+		return userId;
+	}
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
 	public String getTiltle() {
 		return tiltle;
 	}

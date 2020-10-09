@@ -4,15 +4,14 @@ use dbs_servlet;
 CREATE TABLE user(
 	id BIGINT NOT NULL PRIMARY KEY auto_increment,
     username VARCHAR(30) NOT NULL,
-	pasword VARCHAR(60) NOT NULL,
+	password VARCHAR(60) NOT NULL,
     fullname VARCHAR(255) NULL,
     email VARCHAR(255) NULL,
     thumbnail VARCHAR(255) NULL,
     dob DATE NULL,
     phone BIGINT, 
-    status INT NOT NULL,
-    role TINYINT(1) DEFAULT NULL,
-    post_id BIGINT NOT NULL,
+    status INT UNSIGNED DEFAULT 1,
+    role TINYINT(1) DEFAULT 0,
     created_date TIMESTAMP NULL,
     modified_date TIMESTAMP NULL,
     created_by VARCHAR(255) NULL,
@@ -32,7 +31,6 @@ CREATE TABLE post(
     created_by VARCHAR(255) NULL,
     modified_by VARCHAR(255) NULL
 );
-ALTER TABLE user ADD CONSTRAINT fk_user_posts FOREIGN KEY(post_id) REFERENCES post(id);
 
 CREATE TABLE comment(
 	id BIGINT NOT NULL PRIMARY KEY auto_increment,
@@ -46,3 +44,6 @@ CREATE TABLE comment(
 );
 ALTER TABLE comment ADD CONSTRAINT fk_comment_user FOREIGN KEY(user_id) REFERENCES user(id);
 ALTER TABLE comment ADD CONSTRAINT fk_comment_post FOREIGN KEY(post_id) REFERENCES post(id);
+ALTER DATABASE dbs_servlet CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+INSERT INTO user  (username,password,status,role) VALUES ('chiluong', md5('123456'),1,0);
+SELECT * FROM user

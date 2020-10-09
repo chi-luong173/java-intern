@@ -4,6 +4,7 @@ import java.util.List;
 
 import chiluong.citynow.model.PostModel;
 
-public interface IPostDAO {
-//	List<PostModel> findAll();
+public interface IPostDAO extends GenericDAO<PostModel>{
+//	List<PostModel> findOne(Long id);
+	
 }

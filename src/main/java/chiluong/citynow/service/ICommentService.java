@@ -6,6 +6,5 @@ import chiluong.citynow.model.CommentModel;
 
 public interface ICommentService {
 
-	List<CommentModel> findAll();
 
 }

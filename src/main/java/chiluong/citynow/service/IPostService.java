@@ -1,5 +1,10 @@
 package chiluong.citynow.service;
 
-public interface IPostService {
+import java.util.List;
 
+import chiluong.citynow.model.PostModel;
+
+public interface IPostService {
+	
+	
 }

@@ -1,5 +1,7 @@
 package chiluong.citynow.dao;
 
-public interface IUserDAO {
+import chiluong.citynow.model.UserModel;
+
+public interface IUserDAO extends GenericDAO<UserModel>{
 
 }
