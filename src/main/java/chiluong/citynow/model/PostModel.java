@@ -11,6 +11,13 @@ public class PostModel extends AbstractModel<PostModel> {
 	private int rate;
 	private int upvoted;
 	private int downvoted;
+	private int status;
+	public int getStatus() {
+		return status;
+	}
+	public void setStatus(int status) {
+		this.status = status;
+	}
 	private Long userId;
 	public Long getUserId() {
 		return userId;

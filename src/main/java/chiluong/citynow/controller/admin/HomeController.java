@@ -15,9 +15,11 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet(urlPatterns = {"/admin/trang-chu"})
+@WebServlet(urlPatterns = {"/admin/home"})
 public class HomeController extends HttpServlet{
 
+	@Inject 
+	private IPostService postService;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action=request.getParameter("action");
 		if (action!= null && action.equals("login")) {
@@ -26,7 +28,7 @@ public class HomeController extends HttpServlet{
 		}else if (action != null && action.equals("logout")) {
 			
 		}else {
-			
+			request.setAttribute("postCnt", postService.getTotalItem());
 			RequestDispatcher rqDispatcher = request.getRequestDispatcher("/views/admin/home.jsp");
 			rqDispatcher.forward(request, response);
 		}

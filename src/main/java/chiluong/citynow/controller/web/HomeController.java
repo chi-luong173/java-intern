@@ -15,7 +15,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet(urlPatterns = {"/trang-chu","/dang-nhap"})
+@WebServlet(urlPatterns = {"/home","/login"})
 public class HomeController extends HttpServlet{
 	@Inject
 	private IPostService postService;

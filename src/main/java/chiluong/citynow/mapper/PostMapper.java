@@ -15,6 +15,7 @@ public class PostMapper implements RowMapper<PostModel> {
             post.setUpvoted(rs.getInt("upvoted"));
             post.setDownvoted(rs.getInt("downvoted"));
             post.setRate(rs.getInt("rate"));
+            post.setStatus(rs.getInt("status"));
             post.setUserId(rs.getLong("userId"));
             post.setCreatedDate(rs.getTimestamp("createdDate"));
             post.setCreatedBy(rs.getString("createdBy"));

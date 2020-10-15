@@ -12,16 +12,9 @@
                 <div class="copyright">
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     <p>
-                        © 2020 <a href="" target="_blank">Britcat</a> | Nhóm sinh viên trường đại học Bách Khoa thành
-                        phố Hồ Chí Minh.
+                        © 2020 <a href="" target="_blank">Kay Lương</a> | Citynow Company
 
                     </p>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    {#                    <ul>#}
-                    {#                        <li><a href="#"><span class="ti-facebook"></span></a></li>#}
-                    {#                        <li><a href="#"><span class="ti-twitter-alt"></span></a></li>#}
-                    {#                        <li><a href="#"><span class="ti-instagram"></span></a></li>#}
-                    {#                    </ul>#}
                 </div>
             </div>
         </div>

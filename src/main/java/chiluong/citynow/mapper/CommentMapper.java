@@ -15,7 +15,14 @@ public class CommentMapper implements RowMapper<CommentModel>{
             comment.setContent(rs.getString("content"));
             comment.setUserId(rs.getLong("userId"));
             comment.setPostId(rs.getLong("postId"));
-            
+            comment.setCreatedDate(rs.getTimestamp("createdDate"));
+            comment.setCreatedBy(rs.getString("createdBy"));
+            if (rs.getTimestamp("modifiedDate") != null) {
+				comment.setModifiedDate(rs.getTimestamp("modifiedDate"));
+			}
+			if (rs.getString("modifiedBy") != null) {
+				comment.setModifiedBy(rs.getString("modifiedBy"));
+			}
 			return comment;
 		} catch (SQLException e) {
 			return null;

@@ -45,11 +45,12 @@ public class PostAPI extends HttpServlet {
 				
 		}
 	protected void doDelete(HttpServletRequest request, HttpServletResponse reponse) 
-			throws ServletException,IOException{
-				
-			}
-
-	private void saveOrUpdate() {
-		
-	}
+		throws ServletException,IOException{
+			ObjectMapper objectMapper = new ObjectMapper();
+			request.setCharacterEncoding("UTF-8");
+			reponse.setContentType("application/json");
+			PostModel deletePost = HttpUtil.of(request.getReader()).toModel(PostModel.class);
+			postService.delete(deletePost.getIds());
+			objectMapper.writeValue(reponse.getOutputStream(),"{}");
+		}
 }
