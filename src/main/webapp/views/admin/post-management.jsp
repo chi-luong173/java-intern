@@ -30,9 +30,21 @@
 	                                    <tbody >
 	                                    	<c:forEach var="item" items="${model.listResult}">
 	                                    		<tr>
+	                                    		
 	                                    			<td>${item.id}</td>
 	                                    			<td>${item.title}</td>
-	                                    			<td>${item.status}</td>
+	                                    			<td>
+														<c:if test="${model.status == 0 }">
+															<a type="button" style="background-color: green;width:100px" class="btn btn-info mb-1" href=/admin/post-management/set-status/?id=${item.id}/1>
+																Approved
+														</a> &nbsp
+														</c:if>
+														<c:if test="${model.status == 1 }">
+															<a type="button" style="background-color: red;width:100px" class="btn btn-info mb-1" href=/admin/post-management/set-status/${item.id}/0>
+																Disapproved
+														</a> &nbsp
+														</c:if>
+													</td>
 	                                    		</tr>
 	                                    	</c:forEach>
 	                                    </tbody>

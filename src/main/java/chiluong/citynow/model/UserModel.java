@@ -6,7 +6,7 @@ public class UserModel extends AbstractModel<UserModel>{
 	private String password;
 	private String fullName;
 	private int status;
-	private int role;
+	private String role;
 	private long phone;
 	private String thumbnail;
 	private Date dob;
@@ -35,10 +35,10 @@ public class UserModel extends AbstractModel<UserModel>{
 	public void setStatus(int status) {
 		this.status = status;
 	}
-	public int getRole() {
+	public String getRole() {
 		return role;
 	}
-	public void setRole(int role) {
+	public void setRole(String role) {
 		this.role = role;
 	}
 	public long getPhone() {
